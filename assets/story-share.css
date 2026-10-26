@@ -1,0 +1,23 @@
+/* Share to Instagram Story · robbiep.net song pages. Site tokens only: --gold #B89C82, --gold-l #E6CBB3, --bg3 #17151C; square corners. */
+.btn.ghost.ss-btn{gap:10px;padding:0 1.2rem;height:2.9rem;box-shadow:inset 0 0 0 1px rgba(184,156,130,.7);color:var(--gold-l)}
+.btn.ghost.ss-btn::after{content:none}
+.btn.ghost.ss-btn:hover,.btn.ghost.ss-btn:focus-visible{background:rgba(184,156,130,.14);color:#fff}
+.btn.ghost.ss-btn[aria-busy="true"]{opacity:.7;cursor:progress}
+.ss-ic{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:square}
+.ss-toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:95;transform:translate(-50%,14px);opacity:0;pointer-events:none;
+  width:max-content;max-width:min(440px,calc(100vw - 32px));background:#17151C;color:#fff;box-shadow:inset 3px 0 0 var(--gold,#B89C82),0 14px 40px rgba(0,0,0,.5);
+  border:1px solid rgba(230,203,179,.22);padding:14px 18px 14px 20px;font:400 .86rem/1.45 'Inter',system-ui,sans-serif;transition:opacity .2s,transform .2s}
+.ss-toast.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.ss-toast b{color:var(--gold-l,#E6CBB3);font-weight:600}
+.ss-toast small{display:block;margin-top:4px;color:rgba(255,255,255,.6);font-size:.74rem;word-break:break-all}
+.ss-sheet{position:fixed;inset:0;z-index:96;background:rgba(0,0,0,.62);display:flex;align-items:center;justify-content:center}
+.ss-sheet[hidden]{display:none}
+.ss-card{background:#17151C;border:1px solid rgba(230,203,179,.22);width:min(400px,100%);padding:20px 22px 22px;box-shadow:0 18px 50px rgba(0,0,0,.55);color:#fff}
+.ss-card .label{display:block;margin:0 0 14px;color:var(--gold-l,#E6CBB3)}
+.ss-card img{display:block;height:min(46vh,400px);width:auto;aspect-ratio:9/16;margin:0 auto 16px;background:#0E0D12}
+.ss-card .ss-row{display:flex;gap:12px}
+.ss-card .ss-row .btn{flex:1;justify-content:center;margin:0}
+.ss-card .ss-row .btn.ghost{box-shadow:inset 0 0 0 1px rgba(184,156,130,.6);padding:0 1rem;height:2.9rem}
+.ss-card .ss-row .btn.ghost::after{content:none}
+.ss-x{float:right;background:none;border:0;color:rgba(255,255,255,.5);cursor:pointer;font-size:.9rem;margin:-6px -8px 0 0;padding:6px}
+@media (max-width:760px){.ss-sheet{align-items:flex-end}.ss-card{border-left:0;border-right:0;border-bottom:0;width:100%;padding:18px 20px calc(24px + env(safe-area-inset-bottom,0px))}}
