@@ -217,6 +217,26 @@
         if (m) m.textContent = "Opening your email app. If nothing happens, email music@robbiep.net.";
       });
     });
+    root.querySelectorAll("form[data-signup]").forEach(function (f) {
+      var t0 = Date.now(), m = f.querySelector(".formmsg");
+      f.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (f.checkValidity && !f.checkValidity()) { if (f.reportValidity) f.reportValidity(); return; }
+        var btn = f.querySelector("button[type=submit]"); btn.disabled = true; if (m) m.textContent = "Sending...";
+        fetch(f.getAttribute("data-signup"), { method: "POST", headers: { "Content-Type": "application/json" }, credentials: "omit",
+          body: JSON.stringify({ email: f.elements.namedItem("email").value, consent: !!(f.elements.namedItem("consent") || {}).checked,
+            website: (f.elements.namedItem("website") || {}).value || "", source: location.href, t: Date.now() - t0 }) })
+          .then(function (r) { return r.json(); })
+          .then(function (j) {
+            if (!m) return;
+            if (j && j.ok && j.already) m.textContent = "You're already on the list.";
+            else if (j && j.ok) { m.textContent = "You're on the list. Thanks."; f.reset(); }
+            else m.textContent = (j && j.error) || "Something went wrong. Email music@robbiep.net.";
+          })
+          .catch(function () { if (m) m.textContent = "Couldn't reach the signup service. Email music@robbiep.net."; })
+          .then(function () { btn.disabled = false; });
+      });
+    });
     if (hp >= 0) paint();
   }
 
