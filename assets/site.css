@@ -414,6 +414,8 @@ footer.site .fine a{color:inherit;text-decoration:underline;text-decoration-colo
 }
 .bookband .btns.stack{flex-direction:column;align-items:flex-start;gap:14px}
 .bookband .btns.stack .btn.ghost{padding-left:0;padding-right:0}
+.btns.stack{flex-direction:column;align-items:flex-start;gap:14px}
+.btns.stack .btn.ghost{padding-left:0;padding-right:0}
 .nftfig{position:relative;margin:0;align-self:center}
 .split.wide .nftfig img{width:100%;aspect-ratio:16/9 !important;object-fit:contain;background:#000;display:block}
 .nftfig .play{position:absolute;left:14px;bottom:14px;width:52px;height:52px;border:0;cursor:pointer;background:var(--gold);color:var(--gold-ink);font-size:1.1rem}
